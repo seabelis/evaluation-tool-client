@@ -19,13 +19,10 @@ class LoginFormContainer extends React.Component {
   };
 
   render() {
-    console.log('Check for jwt LoginFormContainer:', this.props.jwt)
-    console.log('user: ', this.state.email)
-    if(this.props.jwt !== null) return (
-      <div>
-        Logged in as: {this.state.email}
-      </div>
-    )
+    console.log("Check for jwt LoginFormContainer:", this.props.jwt);
+    console.log("user: ", this.state.email);
+    if (this.props.jwt !== null)
+      return <div>Logged in as: {this.state.email}</div>;
     return this.props.token ? (
       // If we have a token, redirect to Home
       <Redirect to="/" />
