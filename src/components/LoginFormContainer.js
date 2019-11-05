@@ -3,6 +3,8 @@ import LoginForm from "./LoginForm";
 import { connect } from "react-redux";
 import { login } from "../actions/auth";
 import { Redirect } from "react-router-dom";
+import Logout from "./Logout"
+import {logout } from "../actions/auth"
 
 class LoginFormContainer extends React.Component {
   state = { email: "", password: "" };
@@ -22,7 +24,7 @@ class LoginFormContainer extends React.Component {
     console.log("Check for jwt LoginFormContainer:", this.props.jwt);
     console.log("user: ", this.state.email);
     if (this.props.jwt !== null)
-      return <div>Logged in as: {this.state.email}</div>;
+      return <div>Logged in as: {this.state.email} <Logout/></div>;
     return this.props.token ? (
       // If we have a token, redirect to Home
       <Redirect to="/" />
@@ -45,5 +47,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { login }
+  { login, logout}
 )(LoginFormContainer);
