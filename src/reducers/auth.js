@@ -1,3 +1,5 @@
+// reducers/auth.js
+
 import { USER_LOGIN, USER_LOGOUT } from "../actions/auth";
 
 export default function user(state = null, action = {}) {

@@ -1,7 +1,16 @@
+// components/Home.js
+
 import React, { Component } from 'react'
+import LoginFormContainer from "./LoginFormContainer";
+
 
 export default class Home extends Component {
   render () {
-    return <h1>Welcome!</h1>
+    return (
+      <div><h1>Welcome!</h1>
+      <LoginFormContainer />
+      </div>
+    )
+    
   }
 }
