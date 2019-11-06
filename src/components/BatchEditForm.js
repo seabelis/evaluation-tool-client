@@ -1,3 +1,5 @@
+// components/BatchEditForm.js
+
 import React from "react";
 
 export default class BatchEditForm extends React.Component {
