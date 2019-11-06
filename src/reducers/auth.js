@@ -23,6 +23,7 @@ export default (state = initialState, action = {}) => {
   switch (action.type) {
     case USER_LOGIN:
       localStorage.setItem("jwt", action.payload);
+
       return action.payload;
     case USER_LOGOUT:
       localStorage.clear();

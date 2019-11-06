@@ -10,7 +10,7 @@ class BatchesListContainer extends React.Component {
 
   render() {
     console.log("What is this.props?", this.props);
-    console.log('logged in?', this.props.auth)
+    console.log('logged in?', this.props.loggedIn)
     return <BatchesList batches={this.props.batches} />;
   }
 }
@@ -18,7 +18,7 @@ class BatchesListContainer extends React.Component {
 const mapStateToProps = state => {
   return {
     batches: state.batches,
-    loggedIn: state.auth !== null
+    loggedIn: state.auth !== null,
   };
 };
 

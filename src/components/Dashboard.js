@@ -1,4 +1,4 @@
-// components/LoginFormContainer.js
+// components/Dashboard.js
 
 import React from "react";
 import LoginForm from "./LoginForm";
@@ -10,7 +10,7 @@ import {logout } from "../actions/auth"
 import BatchesListContainer from "./BatchesListContainer"
 
 
-class LoginFormContainer extends React.Component {
+class Dashboard extends React.Component {
   state = { email: "", password: "" };
 
   onSubmit = event => {
@@ -25,8 +25,8 @@ class LoginFormContainer extends React.Component {
   };
 
   render() {
-    console.log("Check for jwt LoginFormContainer:", this.props.jwt);
-    console.log("user: ", this.props.email);
+    console.log("Check for jwt Dashboard:", this.props.jwt);
+    console.log("check user: ", this.state.email);
     if (this.props.jwt !== null)
       // return <div>Logged in as: {this.state.email} <Logout/>
       return <div>Logged in. <Logout/>
@@ -51,12 +51,14 @@ class LoginFormContainer extends React.Component {
 const mapStateToProps = state => {
   return {
     jwt: state.auth,
-    user: state.email
+    user: state.email,
+    loggedIn: state.auth !== null
+
   };
 };
 
 export default connect(
   mapStateToProps,
   { login, logout}
-)(LoginFormContainer);
+)(Dashboard);
 
