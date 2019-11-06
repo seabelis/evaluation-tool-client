@@ -6,15 +6,17 @@ export default function BatchesList(props) {
 
   return (
     <div>
+      <ul>
       {props.batches.map(batch => {
         return (
           <li key={batch.id}>
             <Link to={`/batches/${batch.id}`}>
-              Batch Number: {batch.batchNumber}
-            </Link>
+              Batch: {batch.batchNumber}
+            </Link> Dates: {batch.startDate} - {batch.endDate}
           </li>
         );
       })}
+      </ul>
     </div>
   );
 }
