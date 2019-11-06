@@ -1,3 +1,5 @@
+// components/Logout.js
+
 import React from "react";
 import { connect } from "react-redux";
 import { logout } from "../actions/auth";
