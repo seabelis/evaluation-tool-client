@@ -12,9 +12,8 @@ class BatchEditFormContainer extends React.Component {
 
   onChange = event => {
     this.setState({
-      [event.target.batchNumber]: event.target.value,
-      [event.target.startDate]: event.target.value,
-      [event.target.endDate]: event.target.value
+      [event.target.name]: event.target.value,
+
     });
   };
 
