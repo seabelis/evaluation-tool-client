@@ -19,6 +19,6 @@ export const login = (email, password) => (dispatch, getState) => {
 
 export const logout = () => dispatch => {
   dispatch({
-    type: USER_LOGOUT
+    type: USER_LOGOUT, payload: null
   });
 };

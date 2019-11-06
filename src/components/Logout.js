@@ -4,15 +4,16 @@ import { logout } from "../actions/auth";
 class Logout extends React.Component {
   logOut = event => {
     console.log('logout called?')
+    event.preventDefault();
     this.props.logout();
   };
   render() {
     return (
-      <form>
+      <div>
         <button onClick={this.logOut} className="button">
           Log out
         </button>
-      </form>
+      </div>
     );
   }
 }
