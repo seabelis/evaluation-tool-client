@@ -7,6 +7,8 @@ import { login } from "../actions/auth";
 import { Redirect } from "react-router-dom";
 import Logout from "./Logout"
 import {logout } from "../actions/auth"
+import BatchesListContainer from "./BatchesListContainer"
+
 
 class LoginFormContainer extends React.Component {
   state = { email: "", password: "" };
@@ -24,18 +26,24 @@ class LoginFormContainer extends React.Component {
 
   render() {
     console.log("Check for jwt LoginFormContainer:", this.props.jwt);
-    console.log("user: ", this.state.email);
+    console.log("user: ", this.props.email);
     if (this.props.jwt !== null)
-      return <div>Logged in as: {this.state.email} <Logout/></div>;
+      // return <div>Logged in as: {this.state.email} <Logout/>
+      return <div>Logged in. <Logout/>
+
+            <BatchesListContainer />
+</div>;
     return this.props.token ? (
       // If we have a token, redirect to Home
       <Redirect to="/" />
     ) : (
+      <div>Please Login
       <LoginForm
         onSubmit={this.onSubmit}
         onChange={this.onChange}
         values={this.state}
       />
+      </div>
     );
   }
 }

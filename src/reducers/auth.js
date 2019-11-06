@@ -2,6 +2,7 @@
 
 import { USER_LOGIN, USER_LOGOUT } from "../actions/auth";
 
+
 // export default function user(state = null, action = {}) {
 //   switch (action.type) {
 //     case USER_LOGIN:
@@ -13,6 +14,8 @@ import { USER_LOGIN, USER_LOGOUT } from "../actions/auth";
 //       return state;
 //   }
 // }
+
+
 const token = localStorage.getItem("jwt");
 const initialState = token ? token : null;
 

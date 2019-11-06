@@ -1,5 +1,4 @@
 import request from "superagent";
-import { get } from "http";
 
 export const BATCHES_FETCHED = "BATCHES_FETCHED";
 
@@ -13,19 +12,16 @@ const batchesFetched = batches => ({
 export const loadBatches = () => (dispatch, getState) => {
   const token = getState().auth;
 console.log('what is getState.auth?', getState().auth)
-  // guard statement that checks if we already have teams
   if (getState().batches.length !== 0) return;
-  request(`${baseUrl}/batches`) // url correct? -> make request with httpie first
+  request(`${baseUrl}/batches`) 
   .set("Authorization", `Bearer ${token}`)
   .send()
 
     .then(response => {
       console.log('response:', response) 
-      // -> have a look at the body of the request or status code
-      // dispatch an EVENTS_FETCHED action that contains the events
-      dispatch(batchesFetched(response.body)); // check redux devtools if action got dispatched
+      dispatch(batchesFetched(response.body)); 
     })
-    .catch(console.error); // if you don't console response, check the console for errors
+    .catch(console.error); 
 };
 
 
