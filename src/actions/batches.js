@@ -40,3 +40,24 @@ export const loadBatch = id => (dispatch, getState) => {
     dispatch(fetchBatchSuccess(response.body));
   });
 };
+
+export const BATCH_CREATE_SUCCESS = 'BATCH_CREATE_SUCCESS'
+
+const batchCreateSuccess = batch => ({
+  type: BATCH_CREATE_SUCCESS,
+  batch
+})
+
+export const createBatch = (data) => (dispatch, getState) => {
+  const token = getState().auth;
+
+  request
+    .post(`${baseUrl}/batches`)
+    .set("Authorization", `Bearer ${token}`)
+    .send(data)
+    .then(response => {
+      dispatch(batchCreateSuccess(response.body))
+    })
+    .catch(console.error)
+}
+
