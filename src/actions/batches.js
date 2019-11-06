@@ -52,7 +52,7 @@ export const createBatch = (data) => (dispatch, getState) => {
   const token = getState().auth;
 
   request
-    .post(`${baseUrl}/batches`)
+    .post(`${baseUrl}/batch`)
     .set("Authorization", `Bearer ${token}`)
     .send(data)
     .then(response => {
