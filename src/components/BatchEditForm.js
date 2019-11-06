@@ -6,7 +6,7 @@ export default function(props) {
       <label>Batch Number</label>
       <input
         value={props.batchNumber}
-        batchNumber="batchNumber"
+        batchnumber="batchNumber"
         onChange={props.onChange}
       />
       <label>Start Date</label>
