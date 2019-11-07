@@ -5,9 +5,9 @@ export default class BatchDetails extends React.Component {
     console.log("this.props.batch?", this.props.batch);
     return this.props.batch ? (
       <div>
-        <h1>{this.props.batch.batchNumber}</h1>
-        <p>{this.props.batch.startDate}</p>
-        <p>{this.props.batch.endDate}</p>
+        <h1>Batch Number: {this.props.batch.batchNumber}</h1>
+        <p>Start Date: {this.props.batch.startDate}</p>
+        <p>End Date: {this.props.batch.endDate}</p>
       </div>
     ) : (
       "Loading..."
