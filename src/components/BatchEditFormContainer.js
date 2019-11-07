@@ -1,3 +1,5 @@
+// components/BatchEditFormContainer.js
+
 import React from "react";
 import { connect } from "react-redux";
 import { createBatch } from "../actions/batches";
@@ -7,13 +9,12 @@ class BatchEditFormContainer extends React.Component {
   state = {
     batchNumber: "",
     startDate: "",
-    endDate:""
+    endDate: ""
   };
 
   onChange = event => {
     this.setState({
-      [event.target.name]: event.target.value,
-
+      [event.target.name]: event.target.value
     });
   };
 
@@ -22,7 +23,7 @@ class BatchEditFormContainer extends React.Component {
     this.props.createBatch(this.state);
     this.setState({
       batchNumber: "",
-      startDate: '',
+      startDate: "",
       endDate: ""
     });
   };

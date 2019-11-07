@@ -1,3 +1,5 @@
+// components/BatchEditForm.js
+
 import React from "react";
 
 export default class BatchEditForm extends React.Component {
@@ -25,7 +27,7 @@ export default class BatchEditForm extends React.Component {
             name="startDate"
             onChange={this.props.onChange}
             value={this.props.values.startDate}
-            placeholder='yyyy-mm-dd'
+            placeholder="yyyy-mm-dd"
           />
         </label>
         <label>
@@ -34,8 +36,7 @@ export default class BatchEditForm extends React.Component {
             name="endDate"
             onChange={this.props.onChange}
             value={this.props.values.endDate}
-            placeholder='yyyy-mm-dd'
-
+            placeholder="yyyy-mm-dd"
           />
         </label>
         <input type="submit" value="Submit"></input>
