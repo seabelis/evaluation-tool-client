@@ -8,6 +8,8 @@ import { Redirect } from "react-router-dom";
 import Logout from "./Logout";
 import { logout } from "../actions/auth";
 import BatchesListContainer from "./BatchesListContainer";
+import BatchDetailsContainer from "./BatchDetailsContainer";
+import { Route } from "react-router-dom";
 
 class Dashboard extends React.Component {
   state = { email: "", password: "" };
@@ -31,7 +33,12 @@ class Dashboard extends React.Component {
       return (
         <div>
           Logged in. <Logout />
-          <BatchesListContainer />
+          <Route path="/" exact component={BatchesListContainer} />
+          <Route
+            path="/batches/:id"
+            exact
+            component={BatchDetailsContainer}
+          />
         </div>
       );
     return this.props.token ? (
