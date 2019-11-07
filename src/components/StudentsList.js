@@ -13,9 +13,10 @@ export default function StudentsList(props) {
           return (
             <li key={student.id}>
               <img className='profileImg' src={student.photo} alt={student.name}/>
+              <br />
               <Link to={`/students/${student.id}`}>
                 {student.name}
-              </Link>
+              </Link> Batch: {student.batchId}
               
             </li>
           );

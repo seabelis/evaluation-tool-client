@@ -4,6 +4,7 @@ import BatchDetails from "./BatchDetails";
 import { loadBatch } from "../actions/batches";
 import { Route, Link } from "react-router-dom";
 import Dashboard from "./Dashboard";
+import {loadStudents} from "../actions/students"
 
 class BatchDetailsContainer extends React.Component {
   componentDidMount() {
@@ -11,7 +12,7 @@ class BatchDetailsContainer extends React.Component {
       "BatchDetailsContainer this.props.match.params.id?",
       this.props.match.params.id
     );
-    this.props.loadBatch(this.props.match.params.id);
+    this.props.loadBatch(Number(this.props.match.params.id));
   }
 
   render() {
@@ -35,7 +36,7 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { loadBatch }
+  { loadBatch, loadStudents }
 )(BatchDetailsContainer);
 
 // import React from 'react'
