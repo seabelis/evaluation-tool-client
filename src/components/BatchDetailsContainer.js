@@ -5,6 +5,7 @@ import { loadBatch } from "../actions/batches";
 import { Route, Link } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import {loadStudents} from "../actions/students"
+import StudentEditFormContainer from "./StudentEditFormContainer"
 
 class BatchDetailsContainer extends React.Component {
   componentDidMount() {
@@ -24,6 +25,8 @@ class BatchDetailsContainer extends React.Component {
         <Link to="/"> Return to Dashboard </Link>
 
         <BatchDetails batch={this.props.batch} />
+        <h3>Add Student</h3>
+        <StudentEditFormContainer />
         <Route path="/" exact component={Dashboard} />
       </div>
     );
