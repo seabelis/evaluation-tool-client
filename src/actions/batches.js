@@ -64,3 +64,23 @@ export const createBatch = data => (dispatch, getState) => {
     })
     .catch(console.error);
 };
+
+export const loadBatchStudents = batchId => (dispatch, getState) => {
+  const token = getState().auth;
+  const batchStudents = getState().batchStudents;
+  console.log("token", token);
+  console.log("loadBatchStudents batchStudents", batchStudents);
+  console.log("CAN WE load batchStudents", getState());
+  request(`${baseUrl}/batches/${batchId}/students`)
+    .set("Authorization", `Bearer ${token}`)
+    .then(response => {
+      console.log("loadbatchstudents response:", response);
+      dispatch(fetchBatchStudentsSuccess(response.body));
+    });
+};
+export const FETCH_BATCH_STUDENTS_SUCCESS = "FETCH_BATCH_STUDENTS_SUCCESS";
+
+const fetchBatchStudentsSuccess = batchStudents => ({
+  type: FETCH_BATCH_STUDENTS_SUCCESS,
+  payload: batchStudents
+});
