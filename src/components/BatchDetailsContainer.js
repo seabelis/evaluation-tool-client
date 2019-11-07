@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import BatchDetails from "./BatchDetails";
 import { loadBatch } from "../actions/batches";
+import { Route, Link } from "react-router-dom";
+import Dashboard from "./Dashboard";
 
 class BatchDetailsContainer extends React.Component {
   componentDidMount() {
@@ -16,7 +18,14 @@ class BatchDetailsContainer extends React.Component {
     console.log("this.props.match.params.id: ", this.props.match.params.id);
     console.log("this.props.batch: ", this.props.batch);
 
-    return <BatchDetails batch={this.props.batch} />;
+    return (
+      <div>
+        <Link to="/"> Return to Dashboard </Link>
+
+        <BatchDetails batch={this.props.batch} />
+        <Route path="/" exact component={Dashboard} />
+      </div>
+    );
   }
 }
 
