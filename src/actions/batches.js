@@ -1,8 +1,8 @@
 import request from "superagent";
+const baseUrl = "http://localhost:4000";
 
 export const BATCHES_FETCHED = "BATCHES_FETCHED";
 
-const baseUrl = "http://localhost:4000";
 
 const batchesFetched = batches => ({
   type: BATCHES_FETCHED,
@@ -11,14 +11,14 @@ const batchesFetched = batches => ({
 
 export const loadBatches = () => (dispatch, getState) => {
   const token = getState().auth;
-  console.log("what is getState.auth?", getState().auth);
+  // console.log("what is getState.auth?", getState().auth);
   if (getState().batches.length !== 0) return;
   request(`${baseUrl}/batches`)
     .set("Authorization", `Bearer ${token}`)
     .send()
 
     .then(response => {
-      console.log("response:", response);
+      // console.log("response:", response);
       dispatch(batchesFetched(response.body));
     })
     .catch(console.error);

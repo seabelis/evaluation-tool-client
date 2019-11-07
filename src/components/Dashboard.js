@@ -26,8 +26,8 @@ class Dashboard extends React.Component {
   };
 
   render() {
-    console.log("Check for jwt Dashboard:", this.props.jwt);
-    console.log("check user: ", this.state.email);
+    // console.log("Check for jwt Dashboard:", this.props.jwt);
+    // console.log("check user: ", this.state.email);
     if (this.props.jwt !== null)
       // return <div>Logged in as: {this.state.email} <Logout/>
       return (

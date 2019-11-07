@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 export default function BatchesList(props) {
   if (!props.batches) return "Loading...";
-  console.log("props: ", props);
-  console.log("props.batches: ", props.batches);
+  // console.log("props: ", props);
+  // console.log("props.batches: ", props.batches);
 
   return (
     <div>

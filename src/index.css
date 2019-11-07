@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.profileImg {
+  max-width: 100px;
+  max-height: 150px;
+}
+
+.list-students {
+  width: auto; 
+  display: inline-block;
+  list-style-type: none;
+  columns: 3;
+
+}
