@@ -6,13 +6,13 @@ import BatchEditFormContainer from "./BatchEditFormContainer";
 
 class BatchesListContainer extends React.Component {
   componentDidMount() {
-    console.log("hi, from BatchesListContainer", this.props);
+    // console.log("hi, from BatchesListContainer", this.props);
     this.props.loadBatches();
   }
 
   render() {
-    console.log("What is this.props?", this.props);
-    console.log("logged in?", this.props.loggedIn);
+    // console.log("What is this.props?", this.props);
+    // console.log("logged in?", this.props.loggedIn);
     return (
       <div>
         <h3>Add Batch</h3>

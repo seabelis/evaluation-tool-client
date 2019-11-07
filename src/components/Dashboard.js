@@ -9,7 +9,8 @@ import Logout from "./Logout";
 import { logout } from "../actions/auth";
 import BatchesListContainer from "./BatchesListContainer";
 import BatchDetailsContainer from "./BatchDetailsContainer";
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
+import StudentsListContainer from "./StudentsListContainer"
 
 class Dashboard extends React.Component {
   state = { email: "", password: "" };
@@ -26,19 +27,18 @@ class Dashboard extends React.Component {
   };
 
   render() {
-    console.log("Check for jwt Dashboard:", this.props.jwt);
-    console.log("check user: ", this.state.email);
+    // console.log("Check for jwt Dashboard:", this.props.jwt);
+    // console.log("check user: ", this.state.email);
     if (this.props.jwt !== null)
       // return <div>Logged in as: {this.state.email} <Logout/>
       return (
         <div>
           Logged in. <Logout />
           <Route path="/" exact component={BatchesListContainer} />
-          <Route
-            path="/batches/:id"
-            exact
-            component={BatchDetailsContainer}
-          />
+          <Route path="/batches/:id" exact component={BatchDetailsContainer}/>
+          <Route path="/students" exact component={StudentsListContainer}/>
+          <Link to="/students"> Students List </Link>
+
         </div>
       );
     return this.props.token ? (
