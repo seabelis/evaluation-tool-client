@@ -14,7 +14,8 @@ class StudentDetailsContainer extends React.Component {
     console.log("studentDetailsContainer this.props.student : ", this.props.student);
     return (
       <div>
-        <Link to="/"> Return to Dashboard </Link>
+        <Link to="/"> Return to Dashboard </Link> | 
+        <Link to="/students"> Return to Students List </Link>
         <StudentDetails student={this.props.student} />
       </div>
     );

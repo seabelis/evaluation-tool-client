@@ -9,7 +9,12 @@ export default props => {
   return (
     <div>
       <div>
-        <h1>Student Name: {student.name}</h1>
+        <h1>{student.name}</h1>
+        <img
+                className="profileImg"
+                src={student.photo}
+                alt={student.name}
+              />
         <p>Batch: {student.batchId}</p>
       </div>
       
