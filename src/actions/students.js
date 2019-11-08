@@ -1,6 +1,13 @@
 import request from "superagent";
 const baseUrl = "http://localhost:4000";
 
+export const STUDENTS_FETCHED = "STUDENTS_FETCHED";
+
+const studentsFetched = students => ({
+  type: STUDENTS_FETCHED,
+  payload: students
+});
+
 export const loadStudents = () => (dispatch, getState) => {
   const token = getState().auth;
   if (getState().students.length !== 0) return;
@@ -15,19 +22,16 @@ export const loadStudents = () => (dispatch, getState) => {
     .catch(console.error);
 };
 
-const studentsFetched = students => ({
-  type: STUDENTS_FETCHED,
-  payload: students
-});
 
-export const STUDENTS_FETCHED = "STUDENTS_FETCHED";
 
 export const STUDENT_ADD_SUCCESS = "STUDENT_ADD_SUCCESS";
 
-const studentAddSuccess = student => ({
+const studentAddSuccess = batch => ({
   type: STUDENT_ADD_SUCCESS,
-  payload: student
+  payload: batch
 });
+
+
 
 export const addStudent = data => (dispatch, getState) => {
   const token = getState().auth;

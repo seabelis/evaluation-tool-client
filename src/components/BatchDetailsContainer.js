@@ -12,7 +12,7 @@ class BatchDetailsContainer extends React.Component {
   }
 
   render() {
-    console.log("batchdetailscontainer this.props.batch : ", this.props.batch);
+    // console.log("batchdetailscontainer this.props.batch : ", this.props.batch);
     return (
       <div>
         <Link to="/"> Return to Dashboard </Link>
