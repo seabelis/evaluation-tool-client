@@ -12,13 +12,14 @@ export default function StudentsList(props) {
         {props.students.map(student => {
           return (
             <li key={student.id}>
-              <img
+              
+              <Link to={`/students/${student.id}`}><img
                 className="profileImg"
                 src={student.photo}
                 alt={student.name}
               />
               <br />
-              <Link to={`/students/${student.id}`}>{student.name}</Link> <br />
+              {student.name}</Link> <br />
               Batch: {student.batchId}
             </li>
           );
