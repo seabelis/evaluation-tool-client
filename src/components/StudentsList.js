@@ -16,7 +16,8 @@ export default function StudentsList(props) {
               <br />
               <Link to={`/students/${student.id}`}>
                 {student.name}
-              </Link> Batch: {student.batch.batchNumber}
+              </Link> 
+              Batch: {student.batchId}
               
             </li>
           );

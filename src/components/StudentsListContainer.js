@@ -15,7 +15,7 @@ class StudentsListContainer extends React.Component {
     console.log("logged in?", this.props.loggedIn);
     return (
       <div>
-        <Link to="/"> Return to Dashboard </Link>
+        {/* <Link to="/"> Return to Dashboard </Link> */}
 
         <h3>All Students</h3>
         <StudentsList students={this.props.students} />

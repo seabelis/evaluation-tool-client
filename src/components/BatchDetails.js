@@ -29,60 +29,35 @@ export default (props) => {
   )
 }
 
-// function BatchDetails(props) {
-//   console.log("props: ", props);
-//   if (!props.batch.id) return "Loading";
-//   return (
-    // <div>
-    //   <div>
-    //     <h1>Batch Number: {props.batch.batchNumber}</h1>
-    //     <p>Start Date: {props.batch.startDate}</p>
-    //     <p>End Date: {props.batch.endDate}</p>
-    //   </div>
-    //   <ul>
-    //     {props.batch.students.map(student => {
-    //       return (
-    //         <li>
-    //           {student.name} : {student.photo}
-    //         </li>
-    //       );
-    //     })}
-    //   </ul>
-    // </div>
-//   );
-// }
-// export default BatchDetails;
-
-// import React from "react";
+// import * as React from "react";
+// import StudentsListContainer from "./StudentsListContainer";
+// // import BatchStudentsList from "./BatchStudentsList";
 // import { Link } from "react-router-dom";
 
-// export default class BatchDetails extends React.Component {
-//   render() {
-//     console.log("this.props.batch?", this.props.batch);
-//     console.log('this.props: ',this.props)
-//     console.log('this.props.students', this.props.students)
+// export default (props) => {
+//   const { batch } = props
+//   // if(!batch.id) return <h1>Loading</h1>
+//   console.log('batch details', props.batch)
 
-//     return this.props.batch ? (
-//       <div>
-//         <h1>Batch Number: {this.props.batch.batchNumber}</h1>
-//         <p>Start Date: {this.props.batch.startDate}</p>
-//         <p>End Date: {this.props.batch.endDate}</p>
-//         <ul className='list-students'>
-//         {this.props.students.map(student => {
+  
+
+//   return (
+//     <div>
+// <ul className='list-students'>
+//         {props.batch.map(batch => {
 //           return (
-//             <li key={student.id}>
-//               <img className='profileImg' src={student.photo} alt={student.name}/>
-//               <Link to={`/students/${student.id}`}>
-//                 {student.name}
-//                 </Link> Batch: {student.batchId}
+//             <li key={batch.id}>
+// <img className='profileImg' src={batch.photo} alt={batch.name}/>
+// <br />
 
+//               <Link to={`/students/${batch.batchId}`}>
+//                 Batch: {batch.name}
+//               </Link>{" "}
+//               Batch: {batch.batch.id} 
 //             </li>
 //           );
 //         })}
 //       </ul>
-//       </div>
-//     ) : (
-//       "Loading..."
-//     );
-//   }
+//     </div>
+//   )
 // }

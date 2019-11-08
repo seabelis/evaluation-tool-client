@@ -5,7 +5,9 @@ import React from "react";
 export default class StudentEditForm extends React.Component {
   state = {
     name: "",
-    photo: ""
+    photo: "",
+    batchId: ''
+
   };
 
   render() {
@@ -27,6 +29,14 @@ export default class StudentEditForm extends React.Component {
             onChange={this.props.onChange}
             value={this.props.values.photo}
             placeholder="url"
+          />
+        </label>
+        <label>
+          Batch ID:{" "}
+          <input
+            name="batchId"
+            onChange={this.props.onChange}
+            value={this.props.values.batchId}
           />
         </label>
 
