@@ -65,16 +65,3 @@ export const createBatch = data => (dispatch, getState) => {
     .catch(console.error);
 };
 
-export const loadBatchStudents = batchId => (dispatch, getState) => {
-  const token = getState().auth;
-  const batches = getState().batch;
-  console.log("token", token);
-  console.log("loadBatch batches", batches);
-  console.log("CAN WE load batch", getState());
-  request(`${baseUrl}/batches/${batchId}/students`)
-    .set("Authorization", `Bearer ${token}`)
-    .then(response => {
-      console.log("loadbatch response:", response);
-      dispatch(fetchBatchSuccess(response.body));
-    });
-};

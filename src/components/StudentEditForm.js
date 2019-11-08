@@ -6,8 +6,7 @@ export default class StudentEditForm extends React.Component {
   state = {
     name: "",
     photo: "",
-    batchId: ''
-
+    batchId: ""
   };
 
   render() {

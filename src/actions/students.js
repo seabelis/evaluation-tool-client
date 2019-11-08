@@ -41,4 +41,3 @@ export const addStudent = data => (dispatch, getState) => {
     })
     .catch(console.error);
 };
-

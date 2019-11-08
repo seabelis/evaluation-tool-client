@@ -9,7 +9,7 @@ class StudentEditFormContainer extends React.Component {
   state = {
     name: "",
     photo: "",
-    batchId: ''
+    batchId: ""
   };
 
   onChange = event => {
@@ -24,8 +24,7 @@ class StudentEditFormContainer extends React.Component {
     this.setState({
       name: "",
       photo: "",
-      batchId: ''
-
+      batchId: ""
     });
   };
 
