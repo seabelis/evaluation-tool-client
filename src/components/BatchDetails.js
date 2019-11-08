@@ -1,55 +1,34 @@
-import React from "react";
-// import { Link } from "react-router-dom";
+import * as React from "react";
+import { Link } from "react-router-dom";
 
+export default props => {
+  const { batch } = props;
+  if (!batch.id) return <h1>Loading</h1>;
+  console.log("batch details", props.batch.students);
 
-export default class BatchDetails extends React.Component {
-  render() {
-    console.log("this.props.batch?", this.props.batch);
-    console.log('this.props: ',this.props)
-    console.log('this.props.students', this.props.students)
-
-    return this.props.batch ? (
+  return (
+    <div>
       <div>
-        <h1>Batch Number: {this.props.batch.batchNumber}</h1>
-        <p>Start Date: {this.props.batch.startDate}</p>
-        <p>End Date: {this.props.batch.endDate}</p>
-        {/* <ul className='list-students'>
-        {props.students.map(student => {
+        <h1>Batch Number: {batch.batchNumber}</h1>
+        <p>Start Date: {batch.startDate}</p>
+        <p>End Date: {batch.endDate}</p>
+      </div>
+      <ul className="list-students">
+        {props.batch.students.map(student => {
           return (
             <li key={student.id}>
-              <img className='profileImg' src={student.photo} alt={student.name}/>
-              <Link to={`/students/${student.id}`}>
-                {student.name}
-                </Link> Batch: {student.batchId}
-              
+              <img
+                className="profileImg"
+                src={student.photo}
+                alt={student.name}
+              />
+              <br />
+              <Link to={`/students/${student.id}`}>{student.name}</Link> <br />
+              Batch: {student.batchId}
             </li>
           );
         })}
-      </ul> */}
-      </div>
-    ) : (
-      "Loading..."
-    );
-  }
-}
-
-
-// import * as React from "react";
-
-// function TeamDetails(props){
-//   console.log('props: ',props)
-//   if(!props.team.name) return 'Loading'
-//   return <div>
-//         {props.team.name}
-//         <ul>
-//         {props.team.players.map(player => {
-//           return (
-//             <li>
-//               {player.number} : {player.name}
-//             </li>
-//           );
-//         })}
-//       </ul>
-//     </div>
-// }
-// export default TeamDetails
+      </ul>
+    </div>
+  );
+};

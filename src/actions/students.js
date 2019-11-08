@@ -21,3 +21,23 @@ const studentsFetched = students => ({
 });
 
 export const STUDENTS_FETCHED = "STUDENTS_FETCHED";
+
+export const STUDENT_ADD_SUCCESS = "STUDENT_ADD_SUCCESS";
+
+const studentAddSuccess = student => ({
+  type: STUDENT_ADD_SUCCESS,
+  payload: student
+});
+
+export const addStudent = data => (dispatch, getState) => {
+  const token = getState().auth;
+
+  request
+    .post(`${baseUrl}/student`)
+    .set("Authorization", `Bearer ${token}`)
+    .send(data)
+    .then(response => {
+      dispatch(studentAddSuccess(response.body));
+    })
+    .catch(console.error);
+};

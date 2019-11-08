@@ -16,6 +16,7 @@ class App extends Component {
           <Route path="/" exact component={Home} />
           <Route path="/" exact component={Dashboard} />
           <Route path="/batches/:id" exact component={BatchDetailsContainer} />
+
           <Route path="/students" exact component={StudentsListContainer} />
 
         </div>

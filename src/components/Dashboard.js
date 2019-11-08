@@ -10,7 +10,7 @@ import { logout } from "../actions/auth";
 import BatchesListContainer from "./BatchesListContainer";
 import BatchDetailsContainer from "./BatchDetailsContainer";
 import { Route, Link } from "react-router-dom";
-import StudentsListContainer from "./StudentsListContainer"
+import StudentsListContainer from "./StudentsListContainer";
 
 class Dashboard extends React.Component {
   state = { email: "", password: "" };
@@ -35,10 +35,9 @@ class Dashboard extends React.Component {
         <div>
           Logged in. <Logout />
           <Route path="/" exact component={BatchesListContainer} />
-          <Route path="/batches/:id" exact component={BatchDetailsContainer}/>
-          <Route path="/students" exact component={StudentsListContainer}/>
+          <Route path="/batches/:id" exact component={BatchDetailsContainer} />
+          <Route path="/students" exact component={StudentsListContainer} />
           <Link to="/students"> Students List </Link>
-
         </div>
       );
     return this.props.token ? (

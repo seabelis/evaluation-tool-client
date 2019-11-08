@@ -64,3 +64,4 @@ export const createBatch = data => (dispatch, getState) => {
     })
     .catch(console.error);
 };
+
