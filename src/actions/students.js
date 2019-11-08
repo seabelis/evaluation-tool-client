@@ -22,16 +22,12 @@ export const loadStudents = () => (dispatch, getState) => {
     .catch(console.error);
 };
 
-
-
 export const STUDENT_ADD_SUCCESS = "STUDENT_ADD_SUCCESS";
 
 const studentAddSuccess = batch => ({
   type: STUDENT_ADD_SUCCESS,
   payload: batch
 });
-
-
 
 export const addStudent = data => (dispatch, getState) => {
   const token = getState().auth;
@@ -44,4 +40,25 @@ export const addStudent = data => (dispatch, getState) => {
       dispatch(studentAddSuccess(response.body));
     })
     .catch(console.error);
+};
+
+export const FETCH_STUDENT_SUCCESS = "FETCH_STUDENT_SUCCESS";
+
+const fetchStudentSuccess = student => ({
+  type: FETCH_STUDENT_SUCCESS,
+  payload: student
+});
+
+export const loadStudent = id => (dispatch, getState) => {
+  const token = getState().auth;
+  const students = getState().students;
+  console.log("token", token);
+  console.log("loadStudent students", students);
+  console.log("CAN WE load student", getState());
+  request(`${baseUrl}/students/${id}`)
+    .set("Authorization", `Bearer ${token}`)
+    .then(response => {
+      console.log("loadStudent response:", response);
+      dispatch(fetchStudentSuccess(response.body));
+    });
 };
