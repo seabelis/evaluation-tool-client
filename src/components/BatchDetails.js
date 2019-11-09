@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
+// import StudentGradeContainer from './StudentGradeContainer'
 
 export default props => {
   const { batch } = props;
@@ -25,6 +26,7 @@ export default props => {
               <br />
               <Link to={`/students/${student.id}`}>{student.name}</Link> <br />
               Batch: {student.batchId}
+              {/* <StudentGradeContainer/> */}
             </li>
           );
         })}

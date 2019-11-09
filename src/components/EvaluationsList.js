@@ -8,13 +8,16 @@ export default function EvaluationsList(props) {
 
   return (
     <div>
-      <ul>
+      <ul className="list-students">
         {props.evaluations.map(evaluation => {
           return (
             <li key={evaluation.id}>
-              <Link to={`/evaluations/${evaluation.id}`}>
-                Evaluation: {evaluation.id}
-              </Link>{" "}
+              {/* <Link to={`/evaluations/${evaluation.id}`}> */}
+                Student ID: {evaluation.studentId}<br/>
+                Lesson Date: {evaluation.lessonDate}<br/>
+                Lesson Date: {evaluation.lessonDate}<br/>
+                Grade: {evaluation.grade}
+              {/* </Link>{" "} */}
             </li>
           );
         })}

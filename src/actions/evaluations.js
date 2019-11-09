@@ -21,3 +21,4 @@ export const loadEvaluations = () => (dispatch, getState) => {
     })
     .catch(console.error);
 };
+
