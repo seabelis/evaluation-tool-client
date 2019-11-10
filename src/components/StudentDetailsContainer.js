@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import StudentDetails from "./StudentDetails";
 import { loadStudent } from "../actions/students";
 import { Link } from "react-router-dom";
+import EvaluationEditFormContainer from "./EvaluationEditFormContainer";
+
 
 class StudentDetailsContainer extends React.Component {
   componentDidMount() {
@@ -17,6 +19,8 @@ class StudentDetailsContainer extends React.Component {
         <Link to="/"> Return to Dashboard </Link> | 
         <Link to="/students"> Return to Students List </Link>
         <StudentDetails student={this.props.student} />
+        <EvaluationEditFormContainer student={this.props.student} />
+
       </div>
     );
   }

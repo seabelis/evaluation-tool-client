@@ -22,3 +22,22 @@ export const loadEvaluations = () => (dispatch, getState) => {
     .catch(console.error);
 };
 
+export const EVALUATION_CREATE_SUCCESS = "EVALUATION_CREATE_SUCCESS ";
+
+const evaluationCreateSuccess = evaluation => ({
+  type: EVALUATION_CREATE_SUCCESS,
+  payload: evaluation
+});
+
+export const createEvaluation = data => (dispatch, getState) => {
+  const token = getState().auth;
+
+  request
+    .post(`${baseUrl}/evaluation`)
+    .set("Authorization", `Bearer ${token}`)
+    .send(data)
+    .then(response => {
+      dispatch(evaluationCreateSuccess(response.body));
+    })
+    .catch(console.error);
+};

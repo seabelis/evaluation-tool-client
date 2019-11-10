@@ -19,7 +19,7 @@ export default props => {
       <ul>
         {props.student.evaluations.map(evaluation => {
           return (
-            <li key={evaluation.id}>Grade: {evaluation.grade}</li>
+            <li key={evaluation.id}>{evaluation.grade}</li>
             );
         })}
       </ul>
