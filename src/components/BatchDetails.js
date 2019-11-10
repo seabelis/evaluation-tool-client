@@ -1,12 +1,10 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-// import StudentGradeContainer from './StudentGradeContainer'
 
 export default props => {
   const { batch } = props;
   if (!batch.id) return <h1>Loading</h1>;
-  console.log("batch details", props.batch.students);
-
+  console.log("props.batch.students", props.batch.students);
   return (
     <div>
       <div>
@@ -25,8 +23,10 @@ export default props => {
               />
               <br />
               <Link to={`/students/${student.id}`}>{student.name}</Link> <br />
-              Batch: {student.batchId}
-              {/* <StudentGradeContainer/> */}
+              {student.evaluations.map(evaluation => {
+                return <p key={evaluation.id}>Grade: {evaluation.grade}</p>;
+                
+              })}
             </li>
           );
         })}

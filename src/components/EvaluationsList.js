@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default function EvaluationsList(props) {
   if (!props.evaluations) return "Loading...";
@@ -10,7 +10,9 @@ export default function EvaluationsList(props) {
     <div>
       <ul className="list-students">
         {props.evaluations.map(evaluation => {
+          
           return (
+            
             <li key={evaluation.id}>
               {/* <Link to={`/evaluations/${evaluation.id}`}> */}
                 Student ID: {evaluation.studentId}<br/>

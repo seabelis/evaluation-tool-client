@@ -33,10 +33,10 @@ const fetchBatchSuccess = batch => ({
 
 export const loadBatch = id => (dispatch, getState) => {
   const token = getState().auth;
-  // const batches = getState().batches;
-  // console.log("token", token);
-  // console.log("loadBatch batches", batches);
-  // console.log("CAN WE load batch", getState());
+  const batches = getState().batches;
+  console.log("token", token);
+  console.log("loadBatch batches", batches);
+  console.log("CAN WE load batch", getState());
   request(`${baseUrl}/batches/${id}`)
     .set("Authorization", `Bearer ${token}`)
     .then(response => {

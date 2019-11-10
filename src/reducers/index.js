@@ -16,5 +16,5 @@ export default combineReducers({
   batch,
   students,
   evaluations,
-  student
+  student,
 });

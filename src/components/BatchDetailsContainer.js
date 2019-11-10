@@ -7,18 +7,22 @@ import StudentEditFormContainer from "./StudentEditFormContainer";
 
 class BatchDetailsContainer extends React.Component {
   componentDidMount() {
-    console.log("batch details container component loading");
+    console.log("batch details container component loads successfully");
     this.props.loadBatch(Number(this.props.match.params.id));
   }
 
   render() {
-    // console.log("batchdetailscontainer this.props.batch : ", this.props.batch);
+    console.log("batchdetailscontainer this.props.batch : ", this.props.batch);
+
+    
     return (
+      
       <div>
         <Link to="/"> Return to Dashboard </Link>
         <h3>Add Student</h3>
         <StudentEditFormContainer />
         <BatchDetails batch={this.props.batch} />
+        
       </div>
     );
   }

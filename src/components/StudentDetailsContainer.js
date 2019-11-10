@@ -24,6 +24,7 @@ class StudentDetailsContainer extends React.Component {
 
 const mapStateToProps = state => ({
   student: state.student,
+  evaluations: state.evaluations
 });
 
 export default connect(
