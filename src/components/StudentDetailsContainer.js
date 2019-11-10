@@ -17,7 +17,6 @@ class StudentDetailsContainer extends React.Component {
     return (
       <div>
         <Link to="/"> Return to Dashboard </Link> | 
-        <Link to="/students"> Return to Students List </Link>
         <StudentDetails student={this.props.student} />
         <EvaluationEditFormContainer student={this.props.student} />
 

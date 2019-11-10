@@ -30,7 +30,9 @@ class BatchDetailsContainer extends React.Component {
 
 const mapStateToProps = state => ({
   batch: state.batch,
-  students: state.students
+  students: state.students,
+  loggedIn: state.auth !== null
+
 });
 
 export default connect(

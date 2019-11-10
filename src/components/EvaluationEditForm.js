@@ -2,20 +2,19 @@
 
 import React from "react";
 
+
 export default class EvaluationEditForm extends React.Component {
+  
   state = {
     studentId: "",
-    lessonDate: "",
+    lessonDate: '',
     grade: "",
     remarks: ""
   };
 
   render() {
     console.log("hi from EvaluationEditForm", this.state);
-    var utc = new Date()
-      .toJSON()
-      .slice(0, 10)
-      .replace(/-/g, "/");
+   
 
     return (
       <form onSubmit={this.props.onSubmit}>
